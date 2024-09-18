@@ -15,7 +15,6 @@
 
 import os
 
-
 ################################################################################
 #                         FORCED SETTINGS, DO NOT EDIT
 # prompt_postamble: str = The postamble to seek more details in output.
@@ -37,6 +36,9 @@ people, numbers, events, locations, dates, times, etc.)
 openai_api_key = ''
 anthropic_api_key = ''
 serper_api_key = ''
+# Optional: Add HuggingFace API key if required for Llama3.1-8B
+# huggingface_api_key = ''
+
 random_seed = 1
 model_options = {
     'gpt_4_turbo': 'OPENAI:gpt-4-0125-preview',
@@ -50,6 +52,7 @@ model_options = {
     'claude_21': 'ANTHROPIC:claude-2.1',
     'claude_20': 'ANTHROPIC:claude-2.0',
     'claude_instant': 'ANTHROPIC:claude-instant-1.2',
+    'llama3.1-8b': 'LLAMA:llama3.1-8b',  # Newly added Llama3.1-8B model
 }
 model_string = {
     'gpt_4_turbo': 'gpt4turbo',
@@ -62,6 +65,7 @@ model_string = {
     'claude_21': 'claude21',
     'claude_20': 'claude20',
     'claude_instant': 'claudeinstant',
+    'llama3.1-8b': 'llama31-8b',  # Newly added Llama3.1-8B model
 }
 task_options = {}
 root_dir = '/'.join(os.path.abspath(__file__).split('/')[:-2])
