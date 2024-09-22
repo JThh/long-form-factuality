@@ -33,14 +33,15 @@ prompt_postamble = """\
 Provide as many specific details and examples as possible (such as names of \
 people, numbers, events, locations, dates, times, etc.)
 """
-openai_api_key = ''
+openai_api_key = os.environ['OPENAI_API_KEY']
 anthropic_api_key = ''
-serper_api_key = ''
+serper_api_key = os.environ['SERPER_API_KEY']
 # Optional: Add HuggingFace API key if required for Llama3.1-8B
 # huggingface_api_key = ''
 
-random_seed = 1
+random_seed = 42
 model_options = {
+    'gpt_4o_mini': 'OPENAI:gpt-4o-mini-2024-07-18',
     'gpt_4_turbo': 'OPENAI:gpt-4-0125-preview',
     'gpt_4': 'OPENAI:gpt-4-0613',
     'gpt_4_32k': 'OPENAI:gpt-4-32k-0613',
@@ -55,6 +56,7 @@ model_options = {
     'llama3.1-8b': 'LLAMA:llama3.1-8b',  # Newly added Llama3.1-8B model
 }
 model_string = {
+    'gpt_4o_mini': 'gpt4omini',
     'gpt_4_turbo': 'gpt4turbo',
     'gpt_4': 'gpt4',
     'gpt_4_32k': 'gpt432k',

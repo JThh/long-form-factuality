@@ -248,7 +248,7 @@ def main(_) -> None:
 
   responder = modeling.Model(
       model_name=main_config.responder_model,
-      max_tokens=1024,
+      max_tokens=512,
       show_responses=main_config.show_responder_responses,
       show_prompts=main_config.show_responder_prompts,
   )

@@ -205,8 +205,12 @@ def main(_) -> None:
   )
   out_path = os.path.join(out_folder, out_name)
   utils.print_info(f'Saving result to:\n{out_path}', add_punctuation=False)
-
   result_data = utils.read_json(_RESULT_PATH.value)
+  result_data[_PER_PROMPT_DATA] = result_data[_PER_PROMPT_DATA]
+  for i, response in enumerate(result_data[_PER_PROMPT_DATA]):
+    response = '\n'.join(response['side2_response'].split('\n')[1:])
+    result_data[_PER_PROMPT_DATA][i]['side2_response'] = response
+  # import pdb; pdb.set_trace()
   rater_model = modeling.Model(
       safe_config.model,
       temperature=safe_config.model_temp,

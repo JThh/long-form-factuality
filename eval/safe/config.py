@@ -34,7 +34,7 @@ from common import shared_config
 #     'claude_instant',
 # ]
 ################################################################################
-model_short = 'gpt_35_turbo'
+model_short = 'gpt_4o_mini'
 model_temp = 0.1
 max_tokens = 512
 
@@ -54,7 +54,7 @@ num_searches = 3
 ################################################################################
 max_steps = 5
 max_retries = 10
-debug_safe = False
+debug_safe = True
 
 ################################################################################
 #                         FORCED SETTINGS, DO NOT EDIT
